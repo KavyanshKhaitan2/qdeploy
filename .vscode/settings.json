@@ -2,7 +2,7 @@
   "files.exclude": {
     "**/__pycache__/": true,
     "**/node_modules/": true,
-    "**/.venv/": false
+    "**/.venv/": true
   },
   "djangoCotton.templatePaths": [
     "templates/cotton",

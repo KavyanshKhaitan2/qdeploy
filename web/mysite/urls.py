@@ -14,15 +14,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from labb.shortcuts import set_theme_view
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('qdeploy.urls')),
-    path('api/labb-set-theme/', set_theme_view, name='set_theme'),
+    path("admin/", admin.site.urls),
+    path("dashboard/", include("qdeploy.urls")),
+    path("", include("common.urls")),
+    path("api/labb-set-theme/", set_theme_view, name="set_theme"),
 ]
 
 if settings.DEBUG:

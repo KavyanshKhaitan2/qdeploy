@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     # My apps
+    "common",
     "qdeploy",
-    
     # 3rd party apps
     "tailwind",
     TAILWIND_APP_NAME,
