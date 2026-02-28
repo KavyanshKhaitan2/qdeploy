@@ -1,0 +1,12 @@
+css:
+  build:
+    input: tailwindcsstheme/static_src/src/styles.css
+    minify: true
+    output: tailwindcsstheme/static/css/dist/styles.css
+  scan:
+    apps: {}
+    output: static_src/labb-classes.txt
+    templates:
+    - templates/**/*.html
+    - '*/templates/**/*.html'
+    - '**/templates/**/*.html'

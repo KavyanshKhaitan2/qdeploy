@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "**/__pycache__/": true,
+    "**/node_modules/": true,
+    "**/.venv/": false
+  },
+  "djangoCotton.templatePaths": [
+    "templates/cotton",
+    ".venv/lib/python3.13/site-packages/labb/templates/cotton",
+    ".venv/lib/python3.13/site-packages/labbicons/templates/cotton",
+  ]
+}
