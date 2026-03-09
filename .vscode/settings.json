@@ -1,12 +1,24 @@
 {
-  "files.exclude": {
-    "**/__pycache__/": true,
-    "**/node_modules/": true,
-    "**/.venv/": true
-  },
-  "djangoCotton.templatePaths": [
-    "templates/cotton",
-    ".venv/lib/python3.13/site-packages/labb/templates/cotton",
-    ".venv/lib/python3.13/site-packages/labbicons/templates/cotton",
-  ]
+    "files.exclude": {
+        "**/__pycache__/": true,
+        "**/node_modules/": true,
+        "**/.venv/": false
+    },
+    "djangoCotton.templatePaths": [
+        "templates/cotton",
+        ".venv/lib/python3.13/site-packages/labb/templates/cotton",
+        ".venv/lib/python3.13/site-packages/labbicons/templates/cotton"
+    ],
+    "python.languageServer": "Pylance",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingModuleSource": "none",
+        "reportShadowedImports": "none"
+    },
+    "python.analysis.extraPaths": [
+        "",
+        "/home/user/.vscode/extensions/wmerkens.vscode-circuitpython-v2-0.3.4/stubs",
+        "/home/user/.config/Code/User/globalStorage/wmerkens.vscode-circuitpython-v2/bundle/20260226/adafruit-circuitpython-bundle-py-20260226/lib"
+    ],
+    "circuitpython.board.version": null,
+    "ty.path": [".venv/bin/ty"]
 }

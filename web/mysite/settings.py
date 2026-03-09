@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     # My apps
     "common",
     "qdeploy",
@@ -46,7 +45,6 @@ INSTALLED_APPS = [
     "tailwind",
     TAILWIND_APP_NAME,
     "django_cotton",
-
     "labb",
     "labbicons",
 ]
@@ -91,6 +89,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "mysite.wsgi.application"
 
+LOGIN_URL = "/login/"
+LOGIN_REDIRECT_URL = "/"
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases

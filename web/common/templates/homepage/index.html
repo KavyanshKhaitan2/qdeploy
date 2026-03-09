@@ -1,4 +1,6 @@
-{% extends "base.html" %}
-{% block content %}
-yooo qdeploy here!
-{% endblock content %}
+{% extends "base.html" %} {% block content %}
+<form action="{% url 'auth.logout' %}" method="post">
+    {% csrf_token %}
+    <c-lb.button>Logout</c-lb.button>
+</form>
+yooo qdeploy here! {% endblock content %}

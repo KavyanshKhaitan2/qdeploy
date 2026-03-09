@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block content %}
+<div class="mx-auto text-center">
+    <form method="post">
+        {% csrf_token %}
+        <c-lb.text class="font-bold" as="h1" size="3xl" variant="primary">Login</c-lb.text>
+        <div class="mt-4">
+            <div class="mb-2">
+                <c-lb.input variant="{% if form.errors.username %}error{% endif %}" type="text" name="username" placeholder="Username" required />
+                {{ form.errors.username }}
+            </div>
+            <div class="mb-2">
+                <c-lb.input variant="{% if form.errors.password %}error{% endif %}" type="password" name="password" placeholder="Password" required />
+                {{ form.errors.password }}
+            </div>
+            <c-lb.button>Login</c-lb.button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

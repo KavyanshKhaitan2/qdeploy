@@ -9,7 +9,7 @@
         <meta name="keywords" content="deployments" />
         <meta name="description" content="QDeploy: Quickly deploy your projects with ease." />
         {% tailwind_css %}
-        <c-lb.m.dependencies setThemeEndpoint="{% url 'set_theme' %}" noGlobalCSS="True" />
+        <c-lb.m.dependencies setThemeEndpoint="{% url 'set_theme' %}" />
     </head>
     <body class="leading-normal tracking-normal">
         <div class="w-full">
@@ -93,6 +93,7 @@
                                     class="theme-controller btn btn-ghost btn-sm justify-start"
                                     aria-label="Dark"
                                 />
+                                {% comment %}
                                 <input
                                     type="radio"
                                     name="theme"
@@ -107,13 +108,14 @@
                                     class="theme-controller btn btn-ghost btn-sm justify-start"
                                     aria-label="Daisy Dark"
                                 />
+                                {% endcomment %}
                             </c-lb.menu>
                         </c-lb.dropdown.content>
                     </c-lb.dropdown>
                 </c-lb.navbar.end>
             </c-lb.navbar>
         </div>
-        <div class="container mx-5 mx-auto">
+        <div class="container min-mx-5 mx-auto my-4">
             {% block content %} yoo :3 pls use <code>% block content %</code> to edit this lool {% endblock content %}
         </div>
     </body>

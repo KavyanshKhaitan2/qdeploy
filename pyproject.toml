@@ -9,5 +9,6 @@ dependencies = [
     "django-tailwind[cookiecutter,honcho,reload]>=4.4.2",
     "djlint>=1.36.4",
     "labbicons>=0.2.0",
-    "labbui>=0.2.0",
+    "labbui>=0.3.0",
+    "ty>=0.0.21",
 ]

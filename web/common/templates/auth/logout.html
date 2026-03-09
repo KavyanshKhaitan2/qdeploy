@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block content %}
+<div class="mx-auto text-center">
+    <c-lb.text class="font-bold" as="h1" size="3xl" variant="primary">Logged out</c-lb.text>
+    {% comment %} <div>
+        <c-lb.text>Thanks for spending some quality time with the web site today.</c-lb.text>
+    </div> {% endcomment %}
+    <div class="mt-4">
+        <c-lb.link href="{% url 'auth.login' %}">
+            <c-lb.text> Log in again </c-lb.text>
+        </c-lb.link>
+    </div>
+</div>
+{% endblock content %}
