@@ -1,6 +1,33 @@
 {% extends "base.html" %} {% block content %}
-<form action="{% url 'auth.logout' %}" method="post">
+<form class="text-right" action="{% url 'auth.logout' %}" method="post">
     {% csrf_token %}
     <c-lb.button>Logout</c-lb.button>
 </form>
-yooo qdeploy here! {% endblock content %}
+<div>
+    <c-lb.text class="font-bold mb-4" as="h1" size="3xl" variant="primary">Your projects</c-lb.text>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 w-fit mx-auto">
+        {% for i in '1234567890' %}
+        <c-lb.card class="card-border bg-base-100 shadow-sm w-full max-w-96 mx-2 my-2">
+            <c-lb.card.body>
+                <c-lb.card.title>Kavyansh.tech</c-lb.card.title>
+                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+                <div><c-lb.status variant="success" /> <span>Online 5 seconds ago</span></div>
+                <c-lb.card.actions justify="end">
+                    <c-lb.button variant="primary">Manage</c-lb.button>
+                </c-lb.card.actions>
+            </c-lb.card.body>
+        </c-lb.card>
+        <c-lb.card class="card-border bg-base-100 shadow-sm w-full max-w-96 mx-2 my-2">
+            <c-lb.card.body>
+                <c-lb.card.title>Kavyansh.tech</c-lb.card.title>
+                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+                <div><c-lb.status variant="error" /> <span>Offline since 2 minutes</span></div>
+                <c-lb.card.actions justify="end">
+                    <c-lb.button variant="primary">Manage</c-lb.button>
+                </c-lb.card.actions>
+            </c-lb.card.body>
+        </c-lb.card>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
