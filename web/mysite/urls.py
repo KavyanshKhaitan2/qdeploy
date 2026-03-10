@@ -24,6 +24,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("dashboard/", include("qdeploy.urls")),
     path("", include("common.urls")),
+    path("", include("qdeploy.urls")),
     path("api/labb-set-theme/", set_theme_view, name="set_theme"),
 ]
 

@@ -1,8 +1,5 @@
 {% extends "base.html" %} {% block content %}
-<form class="text-right" action="{% url 'auth.logout' %}" method="post">
-    {% csrf_token %}
-    <c-lb.button>Logout</c-lb.button>
-</form>
+
 <div>
     <c-lb.text class="font-bold mb-4" as="h1" size="3xl" variant="primary">Your projects</c-lb.text>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 w-fit mx-auto">
