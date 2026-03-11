@@ -1,2 +1,5 @@
 [environment]
 python = "./.venv"
+
+[rules]
+unresolved-attribute = "ignore"

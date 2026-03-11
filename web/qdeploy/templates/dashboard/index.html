@@ -1,24 +1,28 @@
 {% extends "base.html" %} {% block content %}
 
 <div>
-    <c-lb.text class="font-bold mb-4" as="h1" size="3xl" variant="primary">Your projects</c-lb.text>
+    <div class="mb-4 flex">
+        <c-lb.text class="font-bold" as="h1" size="3xl" variant="primary">Your projects</c-lb.text>
+        <c-lb.button variant="primary" class="ml-auto">New project</c-lb.button>
+    </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 w-fit mx-auto">
-        {% for i in '1234567890' %}
+        {% if not projects %}
         <c-lb.card class="card-border bg-base-100 shadow-sm w-full max-w-96 mx-2 my-2">
-            <c-lb.card.body>
-                <c-lb.card.title>Kavyansh.tech</c-lb.card.title>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                <div><c-lb.status variant="success" /> <span>Online 5 seconds ago</span></div>
+            <c-lb.card.body class="mb-auto">
+                <c-lb.card.title>Create a new project</c-lb.card.title>
+                <p>You do not have any projects right now. Create a new one and get started!</p>
                 <c-lb.card.actions justify="end">
-                    <c-lb.button variant="primary">Manage</c-lb.button>
+                    <c-lb.button variant="primary">Get started</c-lb.button>
                 </c-lb.card.actions>
             </c-lb.card.body>
         </c-lb.card>
+        {% endif %}
+        {% for project in projects %}
         <c-lb.card class="card-border bg-base-100 shadow-sm w-full max-w-96 mx-2 my-2">
             <c-lb.card.body>
-                <c-lb.card.title>Kavyansh.tech</c-lb.card.title>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                <div><c-lb.status variant="error" /> <span>Offline since 2 minutes</span></div>
+                <c-lb.card.title>{{ project.name }}</c-lb.card.title>
+                <p>{{ project.description|linebreaks }}</p>
+                <div><c-lb.status variant="success" /> <span>Online 5 seconds ago</span></div>
                 <c-lb.card.actions justify="end">
                     <c-lb.button variant="primary">Manage</c-lb.button>
                 </c-lb.card.actions>
