@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-4 flex">
+        <c-lb.text class="font-bold" as="h1" size="3xl" variant="primary">Create a new project</c-lb.text>
+        <c-lb.button variant="primary" class="ml-auto"
+            >Create</c-lb.button
+        >
+    </div>
+    <div class="mx-2">
+        <div class="flex my-2">
+            <c-lbi.rmx.pencil class="mt-2 mx-2" w="24" h="24" />
+            <c-lb.input name="name" type="text" placeholder="Project name" class="w-full" autocomplete="off" required />
+        </div>
+        <div class="flex my-2">
+            <c-lbi.rmx.pencil class="mt-2 mx-2" w="24" h="24" />
+            <c-lb.textarea name="description" placeholder="Description (optional)" class="w-full" autocomplete="off" />
+        </div>
+
+        <div class="flex my-2">
+            <c-lbi.rmx.git-branch class="mt-2 mx-2" w="24" h="24" />
+            <c-lb.input name="repo" type="text" placeholder="Git Repository URL" class="w-full" autocomplete="off" required />
+        </div>
+    </div>
+</form>
+{% endblock content %}

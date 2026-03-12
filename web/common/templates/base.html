@@ -17,7 +17,7 @@
                 <div class="p-4 h-full bg-base-100 border-r border-r-base-200 w-64">
                     <div class="flex">
                         <h3 class="text-lg font-semibold mb-4">QDeploy</h3>
-                        <c-lb.dropdown alignment="start" size="sm" class="ml-auto flex">
+                        <c-lb.dropdown alignment="end" size="sm" class="ml-auto flex">
                             {% csrf_token %}
                             <c-lb.dropdown.trigger class="btn btn-sm">
                                 <c-lbi.rmx.sun w="1.5em" h="1.5em" /> Theme
@@ -45,7 +45,7 @@
                         </c-lb.dropdown>
                     </div>
                     <c-lb.menu class="bg-base text-base-content rounded-box w-full">
-                        <c-lb.menu.item title="Dashboard" />
+                        <c-lb.menu.item href="{% url 'dashboard' %}" title="Dashboard" />
                         <c-lb.menu.item title="Analytics" />
                         <c-lb.menu.item title="Reports" />
                         <c-lb.menu.item title="Settings" />
@@ -64,6 +64,49 @@
 
             <div class="p-4 h-full gap-4">
                 <div class="container min-mx-5 mx-auto my-4">
+                    {% if messages %} {% for message in messages %}
+                    <!-- comment for formatter sanity -->
+                    {% if message.tags == 'info' %}
+                    <c-lb.alert
+                        class="mb-4"
+                        variant="{{ message.tags }}"
+                        icon="rmx.information"
+                    >
+                        <span> {{ message }} </span>
+                    </c-lb.alert>
+                    {% elif message.tags == 'success' %}
+                    <c-lb.alert
+                        class="mb-4"
+                        variant="{{ message.tags }}"
+                        icon="rmx.check"
+                    >
+                        <span> {{ message }} </span>
+                    </c-lb.alert>
+                    {% elif message.tags == 'warning' %}
+                    <c-lb.alert
+                        class="mb-4"
+                        variant="{{ message.tags }}"
+                        icon="rmx.alert"
+                    >
+                        <span> {{ message }} </span>
+                    </c-lb.alert>
+                    {% elif message.tags == 'error' %}
+                    <c-lb.alert
+                        class="mb-4"
+                        variant="{{ message.tags }}"
+                        icon="rmx.close-circle"
+                    >
+                        <span> {{ message }} </span>
+                    </c-lb.alert>
+                    {% else %}
+                    <c-lb.alert
+                        class="mb-4"
+                    >
+                        <span> {{ message }} </span>
+                    </c-lb.alert>
+                    {% endif %}
+                    {% endfor %} {% endif %}
+                    <!-- comment for formatter sanity -->
                     {% block content %}
                     <div>yoo :3 pls use <code>% block content %</code> to edit this lool</div>
                     {% endblock content %}
