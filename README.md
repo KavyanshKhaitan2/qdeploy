@@ -4,7 +4,7 @@ A self-hosted service to easily add and manage your deployments.
 ## TODO list
 - [ ] Setup deployment engine
 - [x] Add login
-- [ ] Make it possible to add deployments from dashboard (git repo)
+- [x] Make it possible to add deployments from dashboard (git repo)
 - [ ] Add way to configure server start script and deploy script
 - [ ] Add manual deploy button
 - [ ] Add push-to-deploy github integration
